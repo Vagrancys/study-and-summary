@@ -12,13 +12,29 @@
 初级 :
 	
  - setContentView()  --设置布局文件 
-   - 列如:setContentView(R.layout.activity_main)；
+   - 列如:
+    
+   			setContentView(R.layout.activity_main)；
+            setContentView(mTextView)；
+            setContentView(mTextView,mPramas)；
+
+ - addContentView() --添加视图到现有的活动中
+   - 列如: 
+    
+            addContentView(mTextView，mPramas); 
+
  - getIntent() --返回开始这个活动的意图
-   - 列如: Intent intent=getIntent(); 
+   - 列如: 
+    
+            Intent intent=getIntent(); 
  - getWindowManager() --返回显示自定义窗口的窗口管理器
-     - 列如: 无;
+   - 列如: 
+   
+   			WindowManager wm=getWindowManager();
  - getWindow() --返回当前不为null或者不为hide的窗口
-   - 列如: 无;
+   - 列如: 
+            
+            Window window=getWindow();
  - onCreate() --活动开始时调用，最初始化
    - 列如: (活动被重新初始化或者关闭，savedInstanceState可以恢复大部分数据)
     
@@ -74,8 +90,36 @@
 		         	super.onDestroy();
 					-----
 		    }
+ - getFragmentManager() --返回相关的交互fragmentmanager碎片
+   - 列如: 
+   
+		    FragmentManager fm=getFragmentManager();
+
+ - findViewById() --如果找到则返回视图否则返回null
+   - 列如: 
+   
+		    TextView text=(TextView) findViewById(R.id.text);
+
+ - getActionBar() --返回该activity的actionBar
+   - 列如: 
+   
+		    ActionBar actionBar=getActionBar();
+
+  
+  
 中级 :
 
  - getApplication() --返回拥有这个活动的应用程序
-   - 列如: 无；
- - 
+   - 列如: 
+     
+            Application app=getApplication()；
+ 
+ - onConfigurationChanged() --配置发生改变时调用
+   - 列如:
+    
+            public void onConfigurationChanged(Configuration newConfig){}; 
+ 
+ - setActionBar() --设置一个工具条到活动窗口
+   - 列如:
+    
+            setActionBar(mToolbar);
