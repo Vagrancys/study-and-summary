@@ -105,8 +105,24 @@
    
 		    ActionBar actionBar=getActionBar();
 
-  
-  
+  - startActivityForResult() --发送一个会返回信息的意图
+   - 列如: 
+   
+		    startActivityForResult(mIntent,ACCOUNT_CODE);
+ 
+  - setResult() --设置返回码
+   - 列如: 
+   
+		    setResult(mResultCode);
+  - overridePendingTransition(int enterAnim,int exitAnim) --设置活动的进入和退出动画
+   - 列如: 
+   
+		    overridePendingTransition*(R.anim.enter_anim，R.anim.exit_anim);
+   - finish() --结束活动
+   - 列如: 
+   
+		    finish();
+   
 中级 :
 
  - getApplication() --返回拥有这个活动的应用程序
@@ -123,3 +139,97 @@
    - 列如:
     
             setActionBar(mToolbar);
+
+ - onKeyDown() --返回键处理函数,处理点击事件
+   - 列如:
+    
+            @Overrible
+            public boolean onKeyDown(int keyCode,KeyEvent event){
+                return true;
+            }
+
+ - onKeyLongPress() --返回键长压处理函数,处理长压点击事件
+   - 列如:
+    
+            @Overrible
+            public boolean onKeyLongPress(int keyCode,KeyEvent event){
+                return flase;
+            }
+
+ - onKeyUp() --返回键松开处理函数,处理松开事件
+   - 列如:
+    
+            @Overrible
+            public boolean onKeyUp(int keyCode,KeyEvent event){
+                return flase;
+            }
+
+ - onBackPressed() --返回键松开处理函数,处理松开事件
+   - 列如:
+    
+            @Overrible
+            public void onBackPressed(){
+                super.onBackPressed();
+            }
+
+ - onTouchEvent() --触摸事件处理
+   - 列如:
+    
+            @Overrible
+            public boolean onTouchEvent(MotionEvent event){
+                return super.onTouchEvent(event);
+            }
+
+ - ondispathKeyEvent() --是否拦截键事件
+   - 列如:
+    
+            @Override
+            public boolean dispatchKeyEvent(KeyEvent event) {
+                 return super.dispatchKeyEvent(event);
+            }
+
+ - ondispathTouchEvent() --是否拦截触摸事件
+   - 列如:
+    
+            @Override
+            public boolean dispatchTouchEvent(MotionEvent ev) {
+                 return super.dispatchTouchEvent(ev);
+            }
+
+
+ - onCreateOptionMenu() --创建菜单
+   - 列如:
+    
+            @Override
+            public boolean onCreateOptionsMenu(Menu menu) {
+          
+                 getMenuInflater().inflate(R.menu.menu_browser,menu);
+                 return true;
+            }
+
+ - onOptionItemSelected() --菜单点击事件
+   - 列如:
+    
+            @Override
+            public boolean onOptionsItemSelected(MenuItem item) {
+                  switch (item.getItemId()){
+                        case android.R.id.home:
+                             onBackPressed();
+                             break;
+                  }
+                  return super.onOptionsItemSelected(item);
+            }
+
+ - getSystemService(String name) --得到系统服务
+   - 列如:
+   
+            getSystemService(mName);
+
+
+
+
+
+
+
+
+
